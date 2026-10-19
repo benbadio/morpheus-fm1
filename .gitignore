@@ -1,3 +1,6 @@
 build/
 __pycache__/
 .DS_Store
+
+# Claude Code session state (worktrees, locks, local settings): never pushed
+.claude/
