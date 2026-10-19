@@ -203,7 +203,7 @@ MORPHEUS complies with the **FM-1 Open platform standard**:
 
 ## Feedback & Bug Reports
 
-Found a bug or have an idea? [Open an issue](https://github.com/benbadio/morpheus-fm1/issues/new/choose) (there is also a **Feedback** link on the emulator, manual and flasher pages). Each report is triaged automatically by Claude, which labels it and suggests a fix; the maintainer decides what gets built.
+Found a bug or have an idea? [Open an issue](https://github.com/benbadio/morpheus-fm1/issues/new/choose) (there is also a **Feedback** link on the emulator, manual and flasher pages). The maintainer can have Claude triage a report and suggest a fix, and decides what gets built.
 
 ---
 

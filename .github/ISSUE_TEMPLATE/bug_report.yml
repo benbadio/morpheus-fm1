@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to report this. Every report is triaged automatically and then reviewed by the maintainer.
+        Thanks for taking the time to report this. Every report is read and triaged by the maintainer.
         If your FM-1 no longer starts, see [USB rescue](https://benbadio.github.io/morpheus-fm1/manual.html#usb-rescue) first.
   - type: dropdown
     id: where

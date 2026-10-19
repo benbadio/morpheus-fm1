@@ -33,4 +33,5 @@ jobs:
           label needs-info      fef2c0 "Waiting for more details from the reporter"
           label duplicate       cfd3d7 "Already reported"
           label triaged         5319e7 "Triaged by Claude"
+          label claude:triage   ff7a00 "Add to have Claude triage this issue"
           label claude:fixing   ff7a00 "Claude is working on a fix"

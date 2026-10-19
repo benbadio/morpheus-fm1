@@ -1,14 +1,15 @@
 name: Claude triage
 
-# Every new issue: Claude reads it and the code, labels it, and posts a triage comment with a proposed fix.
-# It cannot change code here; the maintainer replies "@claude fix" to start claude-fix.yml.
+# Manual: the owner adds the "claude:triage" label to an issue. Claude reads it and the code, labels it, and posts
+# a triage comment with a proposed fix, then removes "claude:triage" (add it again to re-run).
+# It cannot change code here; the owner replies "@claude fix" to start claude-fix.yml.
 on:
   issues:
-    types: [opened]
+    types: [labeled]
 
 jobs:
   triage:
-    if: github.event.issue.user.type != 'Bot'
+    if: github.event.label.name == 'claude:triage' && github.event.sender.login == github.repository_owner
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -22,9 +23,7 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          # Issues come from the public. Safe only because this job's token can do nothing but read code and
-          # label/comment on issues, and Claude's tools are limited below.
-          allowed_non_write_users: "*"
+          # The workflow token is limited to this job's permissions: read code, label and comment on issues.
           github_token: ${{ secrets.GITHUB_TOKEN }}
           claude_args: |
             --model claude-sonnet-5-5
@@ -50,7 +49,7 @@ jobs:
                - area: area:firmware | area:emulator | area:flasher | area:manual | area:build (one or more)
                - priority: priority:high (breaks playing or installing) | priority:medium | priority:low
                - needs-info when you cannot tell what is wrong; duplicate (with the original's number) when it is one
-               - always triaged
+               - always triaged; then remove the trigger label: --remove-label claude:triage
             5. Post exactly one comment with `gh issue comment ${{ github.event.issue.number }} --body-file -`:
                **Summary** (1-2 sentences in your own words)
                **Likely cause** (file:line links, or "not found" with what you checked)

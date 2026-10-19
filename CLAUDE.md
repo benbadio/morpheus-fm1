@@ -57,8 +57,9 @@ SLOOP platform. GPL-3.0. Current version 1.0.0, package identity `FM-1_8000013` 
 ## Feedback workflow (.github/)
 
 - People file issues through the forms in `.github/ISSUE_TEMPLATE/` (or the Feedback links on the web pages).
-- `claude-triage.yml`: on every new issue, Claude labels it (type, `area:*`, `priority:*`, `needs-info`,
-  `duplicate`, `triaged`) and posts a summary, likely cause and proposed fix. Read-only on code.
+- `claude-triage.yml`: manual. When the owner adds the `claude:triage` label to an issue, Claude labels it
+  (type, `area:*`, `priority:*`, `needs-info`, `duplicate`, `triaged`), posts a summary, likely cause and
+  proposed fix, then removes `claude:triage`. Read-only on code.
 - `claude-fix.yml`: when the owner comments `@claude …` on an issue or PR, Claude implements the fix on a
   `claude/` branch and opens a PR; `build.yml` runs host tests and the firmware build on it.
 - `labels.yml`: run once from the Actions tab to create the labels.
