@@ -1,0 +1,53 @@
+name: Bug report
+description: Something on the FM-1, the web emulator, the flasher or the manual doesn't work as it should.
+title: "[Bug]: "
+labels: ["feedback", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. Every report is triaged automatically and then reviewed by the maintainer.
+        If your FM-1 no longer starts, see [USB rescue](https://benbadio.github.io/morpheus-fm1/manual.html#usb-rescue) first.
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where did it happen?
+      options:
+        - Hardware (M-VAVE FM-1)
+        - Web emulator
+        - Web flasher
+        - Manual
+        - Building from source
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Firmware version
+      description: Shown on the boot splash screen.
+      value: "1.0.0"
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Select track 3 (808)
+        2. Hold SHIFT and turn TEMPO
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+  - type: textarea
+    id: media
+    attributes:
+      label: Screenshots, audio or logs
+      description: Drag files in here. For the emulator, include your browser and OS.

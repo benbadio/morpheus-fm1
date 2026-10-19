@@ -1,0 +1,36 @@
+name: Create labels
+
+# Run once from the Actions tab: creates (or updates) the labels the feedback forms and Claude triage use.
+on:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  labels:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - name: Create labels
+        run: |
+          label() { gh label create "$1" --color "$2" --description "$3" --force; }
+          label feedback        00ff66 "Submitted through the feedback forms"
+          label bug             d73a4a "Something isn't working"
+          label enhancement     a2eeef "New feature or request"
+          label question        d876e3 "Question about using MORPHEUS"
+          label docs            0075ca "Manual, README or other documentation"
+          label area:firmware   ffb800 "FM-1 firmware (firmware/)"
+          label area:emulator   00f0ff "Web emulator (web/emulator.js)"
+          label area:flasher    00f0ff "Web flasher (web/install.html)"
+          label area:manual     00f0ff "User manual (web/manual.html)"
+          label area:build      cccccc "Build, toolchain and CI"
+          label priority:high   b60205 "Breaks playing or installing"
+          label priority:medium fbca04 "Annoying, has a workaround"
+          label priority:low    0e8a16 "Polish or nice to have"
+          label needs-info      fef2c0 "Waiting for more details from the reporter"
+          label duplicate       cfd3d7 "Already reported"
+          label triaged         5319e7 "Triaged by Claude"
+          label claude:fixing   ff7a00 "Claude is working on a fix"

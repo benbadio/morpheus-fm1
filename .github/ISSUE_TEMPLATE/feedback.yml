@@ -1,0 +1,22 @@
+name: General feedback
+description: Anything else — what you like, what feels off, questions.
+title: "[Feedback]: "
+labels: ["feedback"]
+body:
+  - type: dropdown
+    id: where
+    attributes:
+      label: What is it about?
+      options:
+        - Hardware (M-VAVE FM-1)
+        - Web emulator
+        - Web flasher
+        - Manual
+        - Building from source
+        - Something else
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Your feedback
+    validations:
+      required: true

@@ -53,3 +53,13 @@ SLOOP platform. GPL-3.0. Current version 1.0.0, package identity `FM-1_8000013` 
 - Branding: 🐇 rabbit emoji logo, "MORPHEUS", `VERSION 1.0.0`; palette matrix green `RGB(0,255,102)`,
   amber `RGB(255,184,0)`, cyan `RGB(0,240,255)` on black.
 - Keep the SPDX GPL-3.0 headers on source files.
+
+## Feedback workflow (.github/)
+
+- People file issues through the forms in `.github/ISSUE_TEMPLATE/` (or the Feedback links on the web pages).
+- `claude-triage.yml`: on every new issue, Claude labels it (type, `area:*`, `priority:*`, `needs-info`,
+  `duplicate`, `triaged`) and posts a summary, likely cause and proposed fix. Read-only on code.
+- `claude-fix.yml`: when the owner comments `@claude …` on an issue or PR, Claude implements the fix on a
+  `claude/` branch and opens a PR; `build.yml` runs host tests and the firmware build on it.
+- `labels.yml`: run once from the Actions tab to create the labels.
+- Needs the `CLAUDE_CODE_OAUTH_TOKEN` repo secret (`claude setup-token`) and the Claude GitHub App installed.

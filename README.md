@@ -201,6 +201,12 @@ MORPHEUS complies with the **FM-1 Open platform standard**:
 
 ---
 
+## Feedback & Bug Reports
+
+Found a bug or have an idea? [Open an issue](https://github.com/benbadio/morpheus-fm1/issues/new/choose) (there is also a **Feedback** link on the emulator, manual and flasher pages). Each report is triaged automatically by Claude, which labels it and suggests a fix; the maintainer decides what gets built.
+
+---
+
 ## License & Attribution
 
 MORPHEUS is free software licensed under the **GNU General Public License v3.0** (`GPL-3.0-only`). See [LICENSE](LICENSE) and [LICENSING.md](LICENSING.md) for full details.

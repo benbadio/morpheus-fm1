@@ -1,0 +1,28 @@
+name: Feature request
+description: Suggest a new feature or a change to how something works.
+title: "[Idea]: "
+labels: ["feedback", "enhancement"]
+body:
+  - type: dropdown
+    id: where
+    attributes:
+      label: What is it about?
+      options:
+        - Hardware (M-VAVE FM-1)
+        - Web emulator
+        - Web flasher
+        - Manual
+        - Building from source
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help?
+      description: What would you make with it, or what is hard today?
