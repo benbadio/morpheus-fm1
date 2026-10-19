@@ -1,0 +1,8 @@
+loader: image 8232 B at 0x1c0a800, bss end 0x1c0f400
+loader: ota.bin 6954 B
+  ok    .ram_text: 901 insns, no calls
+  ok    image 273416 B of 581564; RAM .data+.bss 49260 B of 98304; pool 186904 B of 344064
+  ok    register access: hal/ only (src/, loader/ clean)
+app      /home/runner/work/morpheus-fm1/morpheus-fm1/build/morpheus.bin  273416 B
+loader   /home/runner/work/morpheus-fm1/morpheus-fm1/build/loader/ota.bin  6954 B
+package  /home/runner/work/morpheus-fm1/morpheus-fm1/build/morpheus.fwsc  610110 B, identity FM-1_8000013
