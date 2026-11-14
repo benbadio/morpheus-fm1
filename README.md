@@ -214,3 +214,5 @@ MORPHEUS is free software licensed under the **GNU General Public License v3.0**
 - **MORPHEUS Application & UI:** Ben Badio & Contributors.
 - **ReBirth Multi-Engine DSP Suite:** Based on the X0X DSP suite by Leo Kuroshita (@kurogedelic), Robin Schmidt (Open303), schwung-303, dm-Rat (davemollen), 8W8/sc808, 9W9/ER-99 (Matthew Cieplak), and schwung-breakbeat (mestela).
 - **Platform & Hardware HAL:** Copyright (C) 2026 Leo Kuroshita (@kurogedelic), Hügelton Instruments ([Felucca](https://github.com/hugelton/Felucca)), with changes from [SLOOP](https://github.com/isod89/sloop-fm1) (isod89).
+
+You can also try MORPHEUS in the browser, no flashing needed, in the free community [FM-1 Emulator](https://fm1-emulator.atst.tools/).
